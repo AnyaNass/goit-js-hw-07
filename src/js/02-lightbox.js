@@ -23,13 +23,12 @@ function onGalleryItemClick(event) {
 	event.preventDefault();
 }
 
-var lightbox = new SimpleLightbox('.gallery a', { /* options */
+var lightbox = new SimpleLightbox('.gallery a', {
 	scrollZoom: false,
-	// captionSelector: 'img',
-	// captionType: 'attr',
-	// captionsData: alt,
-	// captionPosition: 'bottom',
-	// captionDelay: 0,
-	// overlayOpacity: 1
+	captionSelector: 'img',
+	captionType: 'attr',
+	captionsData: 'alt',
+	captionPosition: 'bottom',
+	captionDelay: 300,
 });
 

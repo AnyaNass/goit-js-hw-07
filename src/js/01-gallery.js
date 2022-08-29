@@ -46,16 +46,21 @@ function addOriginalImgToModal(originalImageLink) {
 
 	instance.show();
 
-	closeByEsp();
+	const visible = instance.visible();
+
+	if (visible) {
+		closeByKeybord(instance);
+	}
 }
 
-function closeByEsp() {
-	document.addEventListener("keydown", function (event) {
-		if (event.keyCode == 27) {
-			document.querySelector('.basicLightbox').classList.remove('basicLightbox--visible', 'basicLightbox--img');
 
-			// или удалять .basicLightbox через ремув, но тогда нет анимации при скрытии
+
+function closeByKeybord(modal) {
+	document.addEventListener("keydown", () => {
+		if (event.keyCode == 27) {
+			modal.close()
 		}
 	})
 }
+
 

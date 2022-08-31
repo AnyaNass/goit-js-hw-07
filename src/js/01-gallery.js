@@ -33,9 +33,7 @@ function onGalleryItemClick(event) {
 		return;
 	}
 
-	const originalImageLink = event.target.dataset.source
-
-	addOriginalImgToModal(originalImageLink);
+	addOriginalImgToModal(event.target.dataset.source);
 
 }
 
@@ -46,19 +44,16 @@ function addOriginalImgToModal(originalImageLink) {
 
 	instance.show();
 
-	const visible = instance.visible();
-
-	if (visible) {
+	if (instance.visible()) {
 		closeByKeybord(instance);
 	}
 }
 
-
-
-function closeByKeybord(modal) {
+function closeByKeybord(instance) {
 	document.addEventListener("keydown", () => {
-		if (event.keyCode == 27) {
-			modal.close()
+		if (event.keyCode == 27 && instance.visible()) {
+			instance.close()
+			console.log('jnfj');
 		}
 	})
 }

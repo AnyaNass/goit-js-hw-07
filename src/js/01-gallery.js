@@ -53,7 +53,6 @@ function closeByKeybord(instance) {
 	document.addEventListener("keydown", () => {
 		if (event.keyCode == 27 && instance.visible()) {
 			instance.close()
-			console.log('jnfj');
 		}
 	})
 }

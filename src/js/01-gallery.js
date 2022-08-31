@@ -34,7 +34,6 @@ function onGalleryItemClick(event) {
 	}
 
 	addOriginalImgToModal(event.target.dataset.source);
-
 }
 
 function addOriginalImgToModal(originalImageLink) {

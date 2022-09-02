@@ -43,17 +43,16 @@ function addOriginalImgToModal(originalImageLink) {
 
 	instance.show();
 
-	if (instance.visible()) {
-		closeByKeybord(instance);
-	}
+	closeByKeybord(instance);
+
 }
 
 function closeByKeybord(instance) {
-	document.addEventListener("keydown", () => {
-		if (event.keyCode == 27 && instance.visible()) {
+	document.addEventListener("keydown", (e) => {
+		if (e.code == "Escape") {
 			instance.close()
 		}
-	})
+	}, { once: true });
 }
 
 
